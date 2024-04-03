@@ -1,0 +1,517 @@
+<html lang="zh-TW"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta http-equiv="CACHE-CONTROL" content="NO-CACHE">
+    <meta property="og:image" content="https://judgment.judicial.gov.twfblogo.png">
+    <title>
+	查詢結果列表
+</title><link rel="stylesheet" href="../css/bootstrap.min.css"><link rel="stylesheet" href="../css/font-awesome.min.css"><link rel="stylesheet" href="../css/iframe.css">
+    <script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-NB3N15LK5E&amp;l=dataLayer&amp;cx=c"></script><script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-X3FQ17YF4M&amp;l=dataLayer&amp;cx=c"></script><script type="text/javascript" src="/js/jquery-3.6.0.min.js"></script>    
+    <script type="text/javascript" src="/js/isMobile.js"></script>
+    <!--引用司法院內網的網頁字型 javascript -->
+    <script type="text/javascript" src="https://tpjwebfont2.judicial.gov.tw/WebFont/cmexwebfont.js"></script>
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-100643133-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-100643133-1');
+    </script>
+
+    <!-- Google tag (gtag.js) --> <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-NB3N15LK5E"></script>
+    <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-NB3N15LK5E'); </script>		
+	
+    
+    <meta name="robots" content="noindex">
+    <link rel="stylesheet" href="../css/result.css">
+    <link rel="stylesheet" href="../css/pagination.css">
+    <script>
+        $(document).ready(function () {
+            subset(".tdCut", "sung");
+        });
+        function cookieId(id, ro, q, gy, gc, sort, jt) {
+            document.cookie = "FJUEQRYParamsCookie_out=id=" + id + "&q=" + q + "&gy=" + gy + "&gc=" + gc + "&sort=" + sort + "&ro=" + ro  + "&jt=" + jt + ";";//domain=law.intraj;secure;
+        }
+    </script><meta http-equiv="origin-trial" content="AymqwRC7u88Y4JPvfIF2F37QKylC04248hLCdJAsh8xgOfe/dVJPV3XS3wLFca1ZMVOtnBfVjaCMTVudWM//5g4AAAB7eyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGV0YWdtYW5hZ2VyLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjk1MTY3OTk5LCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="AymqwRC7u88Y4JPvfIF2F37QKylC04248hLCdJAsh8xgOfe/dVJPV3XS3wLFca1ZMVOtnBfVjaCMTVudWM//5g4AAAB7eyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGV0YWdtYW5hZ2VyLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjk1MTY3OTk5LCJpc1RoaXJkUGFydHkiOnRydWV9">
+</head>
+<body>
+    <form method="post" action="./qryresultlst.aspx?ty=JUDBOOK&amp;q=77e62ef7290347a0ab153393dc3199ac" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="cp4GPEvE9I1OrU02eL73nKmb4KoypFBADG+Bl6MJXArgjmCvkcMfu/2C0Tt4EEOFWOqcEg==">
+</div>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="71F44E97">
+	<input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="">
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="C7ExcjDyxioHR4QEXFt3NG5aSoraFf5AFELAxusrTUOjjaslFEgWRy2l3quI4QiQEgI2h/mhkTQ8XyQi39PRhF92sTC5Nwe799trw6Fu7iFHBMTnl9BQphYx6kMbK6+vzXUdBSkCX047GdVxwryQNWVv/BkbPxrcTNiuGLxvJHOzxXbo7ugjNZNg/UdrALHpMnBROrJsm5HOAo8XqutTqCBfXF1mjoYM6+o7hvGpvQsYZ+gTulTSijC66+8DrJpcTfQ/XxA/A3+DEUFPl1B8vUeP74gmNnKToGhfgPLDIqCFjfm5g9wD9JRd29rAvO243u0vMyo6ZWha32saiqNpEx0mICHwQf2lAl7WFlUPbLOh93uGdb9R5UZ+A4r10cFVH7sshM+7rVQLZR9mEvhdjTpKjSmYzM7cdCtBvm2xo+epgFZUiuT2Z8ygMr55A4TzXgnJP02dzFePx5BFhPXRoGoQ7yeV6DWutiw+0snzYHzAmXTZ9hXRVhq4HUhfWuiVCtJkpPunzTby1vQuSDAIzWt89PmVHDPxhAudc6sz3HFTg5ZsxipVuA7+KtRcAoZwnlga4zhhQ5wxMthIdjVc1gG0p5gdDQh43z52Ry8gzqQbvgt5xRZX5br+aWaUW77Euxbqpwqg/8y1cFqB/y8J0mS2HY9xbQZkmJdH8ZkCREZ/tsjRQYvY4iJyDzxkx5UHMcnOuUleuXp7aojYVFvhVbkqWkwG7S5hf0tJ4D/v/UXplh+7OyM+Y4MrLupAJfeM9UOUI3RSHbg6qH2HnQuqGwad5n2mSW5jhj4ly/uK1GdCFgsny6bDqTpyOSIeXiVKrbH/ldIJ3Gk3icmpiTZ4Qc8zKNLSHXRk1WxDl0tV1e5s6cSoYwhg73t2NiEJ0jW98DOSoYlzL1hKBckS15DB71v5XbNzkGjDGzi/ySww4UFR+jJKasXfNe8kp4QlOt66yj94RxpuBQ0mdzKGvr1Hl0pLROqH5vlNcQIHyNMzhGSHkgHDk31c6vu6lD2xFucoAgtRfPlvTCJTRz59quP7UA/BENdG6mGVqIoI+r9m3sIi5y+CHNmKjoEOfwKhzuI3wlL8Tfe3ajJIx7GmBcoZFYSxHBqxCVgB5C1xs+8HT6HRmjj1">
+</div>
+    <div class="container">
+        <h1 style="display:none"></h1>
+        
+    <div class="result-list">
+        <div class="result-heading">
+            <div class="result-title">查詢結果列表</div>
+            <a href="#" id="closeCut" class="btn btn-basic memoBtn">隱藏摘要</a>
+        </div>
+        <div id="plOverCount" class="bg-danger text-danger text-center">
+	
+            <i class="fa fa-exclamation-circle fa-fw"></i> 本次查詢結果超出 500 筆，只顯示前 500 筆
+        
+</div>
+        <div class="list-pager">
+            <div class="dropdown pull-left">
+                排序：<button class="btn btn-default btn-xs" type="button" id="dropdown-menu-sort" data-toggle="dropdown">
+				    日期新到舊
+				    <i class="fa fa-sort"></i>
+			    </button>
+			    <ul class="dropdown-menu">
+                    <li><a href="qryresultlst.aspx?sort=DS&amp;ot=in">裁判日期新到舊</a></li>
+                    <li><a href="qryresultlst.aspx?sort=DB&amp;ot=in">裁判日期舊到新</a></li>
+                    <li><a href="qryresultlst.aspx?sort=LG&amp;ot=in" class="courtsort">法院層級大到小</a></li>
+                    <li><a href="qryresultlst.aspx?sort=LB&amp;ot=in" class="courtsort">法院層級小到大</a></li><!--公示催告、簡易案件沒有法院層級分別(都是地院)-->
+                    <li><a href="qryresultlst.aspx?sort=KG&amp;ot=in">裁判大小大到小</a></li>
+                    <li><a href="qryresultlst.aspx?sort=KB&amp;ot=in">裁判大小小到大</a></li>
+			    </ul>
+            </div>
+            
+<script type="text/javascript">
+    function GoPage(ddl) {
+        location.href = ddl.value;
+    }
+</script>
+<div id="plPager" class="pull-right">
+	
+	<span>共 738 筆 . 現在第 1 / 37 頁</span>
+    <span>
+	    
+        
+        <a id="hlNext" class="page" href="/FJUD/qryresultlst.aspx?q=77e62ef7290347a0ab153393dc3199ac&amp;sort=DS&amp;page=2&amp;ot=in">下一頁</a>
+        <a id="hlLast" class="page" href="/FJUD/qryresultlst.aspx?q=77e62ef7290347a0ab153393dc3199ac&amp;sort=DS&amp;page=37&amp;ot=in">最末頁</a>
+	跳至
+        <select name="ctl00$cp_content$ucPagerTop$ddlPage" id="ddlPage" class="btn btn-default btn-xs" onchange="GoPage(this)">
+		<option selected="selected" value="/FJUD/qryresultlst.aspx?q=77e62ef7290347a0ab153393dc3199ac&amp;sort=DS&amp;&amp;Page=1">1</option>
+		<option value="/FJUD/qryresultlst.aspx?q=77e62ef7290347a0ab153393dc3199ac&amp;sort=DS&amp;&amp;Page=2">2</option>
+		<option value="/FJUD/qryresultlst.aspx?q=77e62ef7290347a0ab153393dc3199ac&amp;sort=DS&amp;&amp;Page=3">3</option>
+		<option value="/FJUD/qryresultlst.aspx?q=77e62ef7290347a0ab153393dc3199ac&amp;sort=DS&amp;&amp;Page=4">4</option>
+		<option value="/FJUD/qryresultlst.aspx?q=77e62ef7290347a0ab153393dc3199ac&amp;sort=DS&amp;&amp;Page=5">5</option>
+		<option value="/FJUD/qryresultlst.aspx?q=77e62ef7290347a0ab153393dc3199ac&amp;sort=DS&amp;&amp;Page=6">6</option>
+		<option value="/FJUD/qryresultlst.aspx?q=77e62ef7290347a0ab153393dc3199ac&amp;sort=DS&amp;&amp;Page=7">7</option>
+		<option value="/FJUD/qryresultlst.aspx?q=77e62ef7290347a0ab153393dc3199ac&amp;sort=DS&amp;&amp;Page=8">8</option>
+		<option value="/FJUD/qryresultlst.aspx?q=77e62ef7290347a0ab153393dc3199ac&amp;sort=DS&amp;&amp;Page=9">9</option>
+		<option value="/FJUD/qryresultlst.aspx?q=77e62ef7290347a0ab153393dc3199ac&amp;sort=DS&amp;&amp;Page=10">10</option>
+		<option value="/FJUD/qryresultlst.aspx?q=77e62ef7290347a0ab153393dc3199ac&amp;sort=DS&amp;&amp;Page=11">11</option>
+		<option value="/FJUD/qryresultlst.aspx?q=77e62ef7290347a0ab153393dc3199ac&amp;sort=DS&amp;&amp;Page=12">12</option>
+		<option value="/FJUD/qryresultlst.aspx?q=77e62ef7290347a0ab153393dc3199ac&amp;sort=DS&amp;&amp;Page=13">13</option>
+		<option value="/FJUD/qryresultlst.aspx?q=77e62ef7290347a0ab153393dc3199ac&amp;sort=DS&amp;&amp;Page=14">14</option>
+		<option value="/FJUD/qryresultlst.aspx?q=77e62ef7290347a0ab153393dc3199ac&amp;sort=DS&amp;&amp;Page=15">15</option>
+		<option value="/FJUD/qryresultlst.aspx?q=77e62ef7290347a0ab153393dc3199ac&amp;sort=DS&amp;&amp;Page=16">16</option>
+		<option value="/FJUD/qryresultlst.aspx?q=77e62ef7290347a0ab153393dc3199ac&amp;sort=DS&amp;&amp;Page=17">17</option>
+		<option value="/FJUD/qryresultlst.aspx?q=77e62ef7290347a0ab153393dc3199ac&amp;sort=DS&amp;&amp;Page=18">18</option>
+		<option value="/FJUD/qryresultlst.aspx?q=77e62ef7290347a0ab153393dc3199ac&amp;sort=DS&amp;&amp;Page=19">19</option>
+		<option value="/FJUD/qryresultlst.aspx?q=77e62ef7290347a0ab153393dc3199ac&amp;sort=DS&amp;&amp;Page=20">20</option>
+		<option value="/FJUD/qryresultlst.aspx?q=77e62ef7290347a0ab153393dc3199ac&amp;sort=DS&amp;&amp;Page=21">21</option>
+		<option value="/FJUD/qryresultlst.aspx?q=77e62ef7290347a0ab153393dc3199ac&amp;sort=DS&amp;&amp;Page=22">22</option>
+		<option value="/FJUD/qryresultlst.aspx?q=77e62ef7290347a0ab153393dc3199ac&amp;sort=DS&amp;&amp;Page=23">23</option>
+		<option value="/FJUD/qryresultlst.aspx?q=77e62ef7290347a0ab153393dc3199ac&amp;sort=DS&amp;&amp;Page=24">24</option>
+		<option value="/FJUD/qryresultlst.aspx?q=77e62ef7290347a0ab153393dc3199ac&amp;sort=DS&amp;&amp;Page=25">25</option>
+
+	</select>
+頁
+    </span>
+
+</div>
+<div class="clearfix"></div>
+        </div>
+        
+            <table id="jud" class="jub-table">
+                <tbody><tr>
+                    <th>序號</th>
+                    <th>裁判字號 （內容大小）</th>
+                    <th>裁判日期 </th>
+                    <th>裁判案由 </th>
+                </tr>
+        
+            <tr>
+                <td width="1%" nowrap="nowrap">1.</td>
+                <td><a id="hlTitle" class="hlTitle_scroll" onclick="cookieId('IPCV%2c110%2c%e6%b0%91%e7%87%9f%e4%b8%8a%e6%9b%b4(%e4%b8%80)%2c2%2c20230119%2c2','0','77e62ef7290347a0ab153393dc3199ac','','','DS','1')" onmousedown="cookieId('IPCV%2c110%2c%e6%b0%91%e7%87%9f%e4%b8%8a%e6%9b%b4(%e4%b8%80)%2c2%2c20230119%2c2','0','77e62ef7290347a0ab153393dc3199ac','','','DS','1')" href="data.aspx?ty=JD&amp;id=IPCV%2c110%2c%e6%b0%91%e7%87%9f%e4%b8%8a%e6%9b%b4(%e4%b8%80)%2c2%2c20230119%2c2&amp;ot=in">智慧財產及商業法院 110 年度 民營上更(一) 字第 2 號民事裁定</a>（1K）</td>
+                <td>112.01.19</td>
+                <td width="30%">營業秘密防止侵害(勞動)</td>
+            </tr>
+            <tr class="summary">
+                <th id="jud-s"></th>
+                <td colspan="3" headers="jud-s"><span class="tdCut">上列當事人間營業秘密防止侵害(勞動)事件，改定技術審查官江柏漢依智慧財產案件審理法第4條規定，執行下列職務：一、為使訴訟關係明確，就事實上及法律上之事項，基於專業知識對當事人為說明或發問;二、對證人或鑑定人為直接發問;三、就本案向法官為意見之陳述;四、於證據保...</span></td>
+            </tr>
+        
+            <tr>
+                <td width="1%" nowrap="nowrap">2.</td>
+                <td><a id="hlTitle" class="hlTitle_scroll" onclick="cookieId('IPCV%2c112%2c%e6%b0%91%e7%a7%98%e8%81%b2%e4%b8%8a%2c3%2c20230119%2c1','1','77e62ef7290347a0ab153393dc3199ac','','','DS','1')" onmousedown="cookieId('IPCV%2c112%2c%e6%b0%91%e7%a7%98%e8%81%b2%e4%b8%8a%2c3%2c20230119%2c1','1','77e62ef7290347a0ab153393dc3199ac','','','DS','1')" href="data.aspx?ty=JD&amp;id=IPCV%2c112%2c%e6%b0%91%e7%a7%98%e8%81%b2%e4%b8%8a%2c3%2c20230119%2c1&amp;ot=in">智慧財產及商業法院 112 年度 民秘聲上 字第 3 號民事裁定</a>（4K）</td>
+                <td>112.01.19</td>
+                <td width="30%">聲請秘密保持命令</td>
+            </tr>
+            <tr class="summary">
+                <th id="jud-s"></th>
+                <td colspan="3" headers="jud-s"><span class="tdCut">上列聲請人因本院111年度民商上更一字第2號侵害商標權有關財產權爭議等事件，聲請對於相對人核發秘密保持命令，本院裁定如下：主文相對人林佳瑩律師、鄭人豪律師、林虹均就如附表所示資料不得為實施本院111年度民商上更一字第2號訴訟以外之目的而使用，或對未受秘密保持命...</span></td>
+            </tr>
+        
+            <tr>
+                <td width="1%" nowrap="nowrap">3.</td>
+                <td><a id="hlTitle" class="hlTitle_scroll" onclick="cookieId('IPCV%2c110%2c%e6%b0%91%e5%95%86%e4%b8%8a%2c14%2c20230119%2c1','2','77e62ef7290347a0ab153393dc3199ac','','','DS','1')" onmousedown="cookieId('IPCV%2c110%2c%e6%b0%91%e5%95%86%e4%b8%8a%2c14%2c20230119%2c1','2','77e62ef7290347a0ab153393dc3199ac','','','DS','1')" href="data.aspx?ty=JD&amp;id=IPCV%2c110%2c%e6%b0%91%e5%95%86%e4%b8%8a%2c14%2c20230119%2c1&amp;ot=in">智慧財產及商業法院 110 年度 民商上 字第 14 號民事判決</a>（35K）</td>
+                <td>112.01.19</td>
+                <td width="30%">侵害商標權有關財產權爭議等</td>
+            </tr>
+            <tr class="summary">
+                <th id="jud-s"></th>
+                <td colspan="3" headers="jud-s"><span class="tdCut">上二人共同訴訟代理人王有民律師上訴人多利寶寢具股份有限公司兼 上一 人法定代理人朱景清上二人共同訴訟代理人韓國銓律師上訴人上海多利寶紡織品有限公司兼 上一 人法定代理人朱景灥上二人共同訴訟代理人林立婷律師視同上訴人李隆晉被 上訴 人敬統實業股份有限公司法定代理...</span></td>
+            </tr>
+        
+            <tr>
+                <td width="1%" nowrap="nowrap">4.</td>
+                <td><a id="hlTitle" class="hlTitle_scroll" onclick="cookieId('IPCV%2c111%2c%e6%b0%91%e5%b0%88%e4%b8%8a%2c21%2c20230119%2c2','3','77e62ef7290347a0ab153393dc3199ac','','','DS','1')" onmousedown="cookieId('IPCV%2c111%2c%e6%b0%91%e5%b0%88%e4%b8%8a%2c21%2c20230119%2c2','3','77e62ef7290347a0ab153393dc3199ac','','','DS','1')" href="data.aspx?ty=JD&amp;id=IPCV%2c111%2c%e6%b0%91%e5%b0%88%e4%b8%8a%2c21%2c20230119%2c2&amp;ot=in">智慧財產及商業法院 111 年度 民專上 字第 21 號民事判決</a>（56K）</td>
+                <td>112.01.19</td>
+                <td width="30%">侵害專利權有關財產權爭議等</td>
+            </tr>
+            <tr class="summary">
+                <th id="jud-s"></th>
+                <td colspan="3" headers="jud-s"><span class="tdCut">上二人共同訴訟代理人周金城律師 周耿慶律師上二人共同輔佐人葉盛豐 被 上訴 人玩點互動股份有限公司兼法定代理人張珈偉上二人共同訴訟代理人陳群顯律師柯凱繼律師上列當事人間侵害專利權有關財產權爭議等事件，上訴人對於中華民國111年4月15日本院110年度民專訴字第...</span></td>
+            </tr>
+        
+            <tr>
+                <td width="1%" nowrap="nowrap">5.</td>
+                <td><a id="hlTitle" class="hlTitle_scroll" onclick="cookieId('IPCV%2c111%2c%e6%b0%91%e8%91%97%e8%a8%b4%2c33%2c20230118%2c2','4','77e62ef7290347a0ab153393dc3199ac','','','DS','1')" onmousedown="cookieId('IPCV%2c111%2c%e6%b0%91%e8%91%97%e8%a8%b4%2c33%2c20230118%2c2','4','77e62ef7290347a0ab153393dc3199ac','','','DS','1')" href="data.aspx?ty=JD&amp;id=IPCV%2c111%2c%e6%b0%91%e8%91%97%e8%a8%b4%2c33%2c20230118%2c2&amp;ot=in">智慧財產及商業法院 111 年度 民著訴 字第 33 號民事裁定</a>（1K）</td>
+                <td>112.01.18</td>
+                <td width="30%">侵害著作權有關財產權爭議</td>
+            </tr>
+            <tr class="summary">
+                <th id="jud-s"></th>
+                <td colspan="3" headers="jud-s"><span class="tdCut">上列上訴人與被上訴人社團法人中華音樂著作權協會間因侵害著作權有關財產權爭議事件，經上訴人提起上訴到院。查本件上訴聲明之訴訟標的金額為新臺幣參萬陸佰陸拾參元，應徵第二審裁判費新臺幣壹仟伍佰元，未據上訴人繳納。茲依民事訴訟法第442條第2項規定，限上訴人於收受本裁...</span></td>
+            </tr>
+        
+            <tr>
+                <td width="1%" nowrap="nowrap">6.</td>
+                <td><a id="hlTitle" class="hlTitle_scroll" onclick="cookieId('IPCV%2c111%2c%e6%b0%91%e8%91%97%e4%b8%8a%2c7%2c20230118%2c2','5','77e62ef7290347a0ab153393dc3199ac','','','DS','1')" onmousedown="cookieId('IPCV%2c111%2c%e6%b0%91%e8%91%97%e4%b8%8a%2c7%2c20230118%2c2','5','77e62ef7290347a0ab153393dc3199ac','','','DS','1')" href="data.aspx?ty=JD&amp;id=IPCV%2c111%2c%e6%b0%91%e8%91%97%e4%b8%8a%2c7%2c20230118%2c2&amp;ot=in">智慧財產及商業法院 111 年度 民著上 字第 7 號民事裁定</a>（1K）</td>
+                <td>112.01.18</td>
+                <td width="30%">著作權其他契約爭議事件等</td>
+            </tr>
+            <tr class="summary">
+                <th id="jud-s"></th>
+                <td colspan="3" headers="jud-s"><span class="tdCut">上列當事人間著作權其他契約爭議事件等，改定技術審查官李京叡依智慧財產案件審理法第4條規定，執行下列職務：一、為使訴訟關係明確，就事實上及法律上之事項，基於專業知識對當事人為說明或發問;二、對證人或鑑定人為直接發問;三、就本案向法官為意見之陳述;四、於證據保全時...</span></td>
+            </tr>
+        
+            <tr>
+                <td width="1%" nowrap="nowrap">7.</td>
+                <td><a id="hlTitle" class="hlTitle_scroll" onclick="cookieId('IPCV%2c112%2c%e6%b0%91%e7%a7%98%e8%81%b2%e4%b8%8a%2c4%2c20230118%2c1','6','77e62ef7290347a0ab153393dc3199ac','','','DS','1')" onmousedown="cookieId('IPCV%2c112%2c%e6%b0%91%e7%a7%98%e8%81%b2%e4%b8%8a%2c4%2c20230118%2c1','6','77e62ef7290347a0ab153393dc3199ac','','','DS','1')" href="data.aspx?ty=JD&amp;id=IPCV%2c112%2c%e6%b0%91%e7%a7%98%e8%81%b2%e4%b8%8a%2c4%2c20230118%2c1&amp;ot=in">智慧財產及商業法院 112 年度 民秘聲上 字第 4 號民事裁定</a>（3K）</td>
+                <td>112.01.18</td>
+                <td width="30%">聲請秘密保持命令</td>
+            </tr>
+            <tr class="summary">
+                <th id="jud-s"></th>
+                <td colspan="3" headers="jud-s"><span class="tdCut">上列聲請人因本院111年度民營上更一字第2號營業秘密排除侵害事件，聲請對相對人核發秘密保持命令，本院裁定如下：主文相對人干文元、呂紹凡律師、林艾萱律師就聲請人於民國112年1月4日提出之原料供應商暨原料成本價格之電子郵件往來紀錄（上證三十），不得為實施本院11...</span></td>
+            </tr>
+        
+            <tr>
+                <td width="1%" nowrap="nowrap">8.</td>
+                <td><a id="hlTitle" class="hlTitle_scroll" onclick="cookieId('IPCV%2c112%2c%e6%b0%91%e7%a7%98%e8%81%b2%e4%b8%8a%2c2%2c20230118%2c1','7','77e62ef7290347a0ab153393dc3199ac','','','DS','1')" onmousedown="cookieId('IPCV%2c112%2c%e6%b0%91%e7%a7%98%e8%81%b2%e4%b8%8a%2c2%2c20230118%2c1','7','77e62ef7290347a0ab153393dc3199ac','','','DS','1')" href="data.aspx?ty=JD&amp;id=IPCV%2c112%2c%e6%b0%91%e7%a7%98%e8%81%b2%e4%b8%8a%2c2%2c20230118%2c1&amp;ot=in">智慧財產及商業法院 112 年度 民秘聲上 字第 2 號民事裁定</a>（3K）</td>
+                <td>112.01.18</td>
+                <td width="30%">聲請秘密保持命令</td>
+            </tr>
+            <tr class="summary">
+                <th id="jud-s"></th>
+                <td colspan="3" headers="jud-s"><span class="tdCut">上列聲請人因本院110年度民專上字第35號專利權有關財產權爭議事件，聲請對相對人核發秘密保持命令，本院裁定如下：主文相對人蔡朝安律師、鍾詩敏律師、簡菀萲律師及蔡孟祥就聲請人於民國111年10月7日提出甲證60號之「Study55」，不得為實施本院110年度民專...</span></td>
+            </tr>
+        
+            <tr>
+                <td width="1%" nowrap="nowrap">9.</td>
+                <td><a id="hlTitle" class="hlTitle_scroll" onclick="cookieId('IPCV%2c111%2c%e6%b0%91%e7%a7%98%e8%81%b2%e4%b8%8a%2c17%2c20230118%2c1','8','77e62ef7290347a0ab153393dc3199ac','','','DS','1')" onmousedown="cookieId('IPCV%2c111%2c%e6%b0%91%e7%a7%98%e8%81%b2%e4%b8%8a%2c17%2c20230118%2c1','8','77e62ef7290347a0ab153393dc3199ac','','','DS','1')" href="data.aspx?ty=JD&amp;id=IPCV%2c111%2c%e6%b0%91%e7%a7%98%e8%81%b2%e4%b8%8a%2c17%2c20230118%2c1&amp;ot=in">智慧財產及商業法院 111 年度 民秘聲上 字第 17 號民事裁定</a>（3K）</td>
+                <td>112.01.18</td>
+                <td width="30%">聲請秘密保持命令</td>
+            </tr>
+            <tr class="summary">
+                <th id="jud-s"></th>
+                <td colspan="3" headers="jud-s"><span class="tdCut">上列聲請人因本院111年度民專上字第11號排除侵害專利權事件，聲請對相對人核發秘密保持命令，本院裁定如下：主文相對人王仁君律師、李宛珍律師、黃仁宜律師、洪振盛律師、劉國景就聲請人於民國111年12月16日提出成形設備之研發過程資料（如附件3），不得為實施本院1...</span></td>
+            </tr>
+        
+            <tr>
+                <td width="1%" nowrap="nowrap">10.</td>
+                <td><a id="hlTitle" class="hlTitle_scroll" onclick="cookieId('IPCV%2c111%2c%e6%b0%91%e5%95%86%e8%a8%b4%2c3%2c20230118%2c2','9','77e62ef7290347a0ab153393dc3199ac','','','DS','1')" onmousedown="cookieId('IPCV%2c111%2c%e6%b0%91%e5%95%86%e8%a8%b4%2c3%2c20230118%2c2','9','77e62ef7290347a0ab153393dc3199ac','','','DS','1')" href="data.aspx?ty=JD&amp;id=IPCV%2c111%2c%e6%b0%91%e5%95%86%e8%a8%b4%2c3%2c20230118%2c2&amp;ot=in">智慧財產及商業法院 111 年度 民商訴 字第 3 號民事判決</a>（10K）</td>
+                <td>112.01.18</td>
+                <td width="30%">侵害商標權有關財產權爭議</td>
+            </tr>
+            <tr class="summary">
+                <th id="jud-s"></th>
+                <td colspan="3" headers="jud-s"><span class="tdCut">上列當事人間侵害商標權有關財產權爭議事件，本院於民國111年12月20日言詞辯論終結，判決如下：主文被告梁召弘應給付原告新臺幣壹拾柒萬陸仟伍佰元，及自民國110年12月10日起至清償日止，按週年利率百分之5計算之利息。原告其餘之訴駁回。訴訟費用由被告梁召弘負擔...</span></td>
+            </tr>
+        
+            <tr>
+                <td width="1%" nowrap="nowrap">11.</td>
+                <td><a id="hlTitle" class="hlTitle_scroll" onclick="cookieId('IPCV%2c111%2c%e6%b0%91%e5%b0%88%e8%a8%b4%2c39%2c20230118%2c2','10','77e62ef7290347a0ab153393dc3199ac','','','DS','1')" onmousedown="cookieId('IPCV%2c111%2c%e6%b0%91%e5%b0%88%e8%a8%b4%2c39%2c20230118%2c2','10','77e62ef7290347a0ab153393dc3199ac','','','DS','1')" href="data.aspx?ty=JD&amp;id=IPCV%2c111%2c%e6%b0%91%e5%b0%88%e8%a8%b4%2c39%2c20230118%2c2&amp;ot=in">智慧財產及商業法院 111 年度 民專訴 字第 39 號民事判決</a>（14K）</td>
+                <td>112.01.18</td>
+                <td width="30%">侵害專利權有關財產權爭議等</td>
+            </tr>
+            <tr class="summary">
+                <th id="jud-s"></th>
+                <td colspan="3" headers="jud-s"><span class="tdCut">上列當事人間請求侵害專利權有關財產權爭議等事件，本院於民國112年1月4日言詞辯論終結，判決如下：主文一、原告之訴及假執行之聲請均駁回。二、訴訟費用由原告負擔。事實及理由壹、程序方面：按不變更訴訟標的，而補充或更正事實上或法律上之陳述者，非為訴之變更或追加，民...</span></td>
+            </tr>
+        
+            <tr>
+                <td width="1%" nowrap="nowrap">12.</td>
+                <td><a id="hlTitle" class="hlTitle_scroll" onclick="cookieId('IPCV%2c111%2c%e6%b0%91%e5%b0%88%e8%a8%b4%2c14%2c20230118%2c2','11','77e62ef7290347a0ab153393dc3199ac','','','DS','1')" onmousedown="cookieId('IPCV%2c111%2c%e6%b0%91%e5%b0%88%e8%a8%b4%2c14%2c20230118%2c2','11','77e62ef7290347a0ab153393dc3199ac','','','DS','1')" href="data.aspx?ty=JD&amp;id=IPCV%2c111%2c%e6%b0%91%e5%b0%88%e8%a8%b4%2c14%2c20230118%2c2&amp;ot=in">智慧財產及商業法院 111 年度 民專訴 字第 14 號民事判決</a>（20K）</td>
+                <td>112.01.18</td>
+                <td width="30%">侵害專利權有關財產權爭議等（</td>
+            </tr>
+            <tr class="summary">
+                <th id="jud-s"></th>
+                <td colspan="3" headers="jud-s"><span class="tdCut">上列當事人間請求侵害專利權有關財產權爭議等（勞動）事件，本院於民國112年1月4日言詞辯論終結，判決如下：主文一、原告之訴及假執行之聲請均駁回。二、訴訟費用由原告負擔。事實及理由壹、程序方面：一、按訴訟全部或一部之裁判，以他訴訟之法律關係是否成立為據者，法院得...</span></td>
+            </tr>
+        
+            <tr>
+                <td width="1%" nowrap="nowrap">13.</td>
+                <td><a id="hlTitle" class="hlTitle_scroll" onclick="cookieId('IPCV%2c111%2c%e5%8f%b8%e6%b0%91%e8%81%b2%2c16%2c20230117%2c1','12','77e62ef7290347a0ab153393dc3199ac','','','DS','1')" onmousedown="cookieId('IPCV%2c111%2c%e5%8f%b8%e6%b0%91%e8%81%b2%2c16%2c20230117%2c1','12','77e62ef7290347a0ab153393dc3199ac','','','DS','1')" href="data.aspx?ty=JD&amp;id=IPCV%2c111%2c%e5%8f%b8%e6%b0%91%e8%81%b2%2c16%2c20230117%2c1&amp;ot=in">智慧財產及商業法院 111 年度 司民聲 字第 16 號民事裁定</a>（3K）</td>
+                <td>112.01.17</td>
+                <td width="30%">聲請返還擔保物</td>
+            </tr>
+            <tr class="summary">
+                <th id="jud-s"></th>
+                <td colspan="3" headers="jud-s"><span class="tdCut">上列當事人間聲請返還擔保物事件，本院裁定如下：主文臺灣臺中地方法院103 年度存字第342號擔保提存事件聲請人所提存之擔保金新臺幣貳佰萬元，准予返還。理由一、按返還擔保金，依民事訴訟法第104 條之規定，須符合下列其中之一：「㈠應供擔保之原因消滅者；㈡供擔保人...</span></td>
+            </tr>
+        
+            <tr>
+                <td width="1%" nowrap="nowrap">14.</td>
+                <td><a id="hlTitle" class="hlTitle_scroll" onclick="cookieId('IPCV%2c111%2c%e5%95%86%e8%aa%bf%2c47%2c20230117%2c1','13','77e62ef7290347a0ab153393dc3199ac','','','DS','1')" onmousedown="cookieId('IPCV%2c111%2c%e5%95%86%e8%aa%bf%2c47%2c20230117%2c1','13','77e62ef7290347a0ab153393dc3199ac','','','DS','1')" href="data.aspx?ty=JD&amp;id=IPCV%2c111%2c%e5%95%86%e8%aa%bf%2c47%2c20230117%2c1&amp;ot=in">智慧財產及商業法院 111 年度 商調 字第 47 號民事裁定</a>（4K）</td>
+                <td>112.01.17</td>
+                <td width="30%">損害賠償</td>
+            </tr>
+            <tr class="summary">
+                <th id="jud-s"></th>
+                <td colspan="3" headers="jud-s"><span class="tdCut">上列當事人間損害賠償事件，經臺灣臺北地方法院刑事庭裁定移送前來（111年度重附民字第51號），本院裁定如下：主文聲請人應於本裁定送達後二十日內，補正聲請人之法定代理人為張佳瑜律師、由聲請人法定代理人張佳瑜律師委任陳振瑋、賴映淳律師為訴訟代理人之委任書，如逾期未...</span></td>
+            </tr>
+        
+            <tr>
+                <td width="1%" nowrap="nowrap">15.</td>
+                <td><a id="hlTitle" class="hlTitle_scroll" onclick="cookieId('IPCV%2c112%2c%e6%b0%91%e7%a7%98%e8%81%b2%2c3%2c20230117%2c1','14','77e62ef7290347a0ab153393dc3199ac','','','DS','1')" onmousedown="cookieId('IPCV%2c112%2c%e6%b0%91%e7%a7%98%e8%81%b2%2c3%2c20230117%2c1','14','77e62ef7290347a0ab153393dc3199ac','','','DS','1')" href="data.aspx?ty=JD&amp;id=IPCV%2c112%2c%e6%b0%91%e7%a7%98%e8%81%b2%2c3%2c20230117%2c1&amp;ot=in">智慧財產及商業法院 112 年度 民秘聲 字第 3 號民事裁定</a>（7K）</td>
+                <td>112.01.17</td>
+                <td width="30%">聲請秘密保持命令</td>
+            </tr>
+            <tr class="summary">
+                <th id="jud-s"></th>
+                <td colspan="3" headers="jud-s"><span class="tdCut">上一人複 代理 人林宗邦專利師相對人翁雅欣律師蘇怡佳律師陳豫宛專利師上列聲請人因本院111年度民專訴字第60號侵害專利權有關財產權爭議等事件，聲請核發秘密保持命令，本院裁定如下：主文一、受秘密保持命令之人：相對人翁雅欣律師、蘇怡佳律師、陳豫宛專利師 。二、應受...</span></td>
+            </tr>
+        
+            <tr>
+                <td width="1%" nowrap="nowrap">16.</td>
+                <td><a id="hlTitle" class="hlTitle_scroll" onclick="cookieId('IPCV%2c111%2c%e6%b0%91%e8%91%97%e8%a8%b4%2c62%2c20230117%2c1','15','77e62ef7290347a0ab153393dc3199ac','','','DS','1')" onmousedown="cookieId('IPCV%2c111%2c%e6%b0%91%e8%91%97%e8%a8%b4%2c62%2c20230117%2c1','15','77e62ef7290347a0ab153393dc3199ac','','','DS','1')" href="data.aspx?ty=JD&amp;id=IPCV%2c111%2c%e6%b0%91%e8%91%97%e8%a8%b4%2c62%2c20230117%2c1&amp;ot=in">智慧財產及商業法院 111 年度 民著訴 字第 62 號民事判決</a>（11K）</td>
+                <td>112.01.17</td>
+                <td width="30%">侵害著作權有關財產權爭議</td>
+            </tr>
+            <tr class="summary">
+                <th id="jud-s"></th>
+                <td colspan="3" headers="jud-s"><span class="tdCut">上列當事人間請求侵害著作權有關財產權爭議事件，本院於民國111年12月20日言詞辯論終結，判決如下：主文被告應給付原告新臺幣伍仟貳佰伍拾元，及自民國一百一十一年三月九日起至清償日止，按週年利率百分之五計算之利息。原告其餘之訴駁回。訴訟費用由被告負擔百分之一，其...</span></td>
+            </tr>
+        
+            <tr>
+                <td width="1%" nowrap="nowrap">17.</td>
+                <td><a id="hlTitle" class="hlTitle_scroll" onclick="cookieId('IPCV%2c111%2c%e6%b0%91%e6%9a%ab%2c11%2c20230117%2c1','16','77e62ef7290347a0ab153393dc3199ac','','','DS','1')" onmousedown="cookieId('IPCV%2c111%2c%e6%b0%91%e6%9a%ab%2c11%2c20230117%2c1','16','77e62ef7290347a0ab153393dc3199ac','','','DS','1')" href="data.aspx?ty=JD&amp;id=IPCV%2c111%2c%e6%b0%91%e6%9a%ab%2c11%2c20230117%2c1&amp;ot=in">智慧財產及商業法院 111 年度 民暫 字第 11 號民事裁定</a>（15K）</td>
+                <td>112.01.17</td>
+                <td width="30%">聲請定暫時狀態之處分</td>
+            </tr>
+            <tr class="summary">
+                <th id="jud-s"></th>
+                <td colspan="3" headers="jud-s"><span class="tdCut">上列當事人間請求聲請定暫時狀態之處分事件，經臺灣桃園地方法院移送前來（案號：111年度智全字第1號），本院裁定如下：主文聲請人以新臺幣參拾伍萬柒仟伍佰元或同面額之金融機構可轉讓定期存單為相對人供擔保後，相對人應停止使用如附表所示商標之中文「築科文理短期補習班」...</span></td>
+            </tr>
+        
+            <tr>
+                <td width="1%" nowrap="nowrap">18.</td>
+                <td><a id="hlTitle" class="hlTitle_scroll" onclick="cookieId('IPCV%2c111%2c%e6%b0%91%e8%91%97%e8%a8%b4%2c10%2c20230117%2c1','17','77e62ef7290347a0ab153393dc3199ac','','','DS','1')" onmousedown="cookieId('IPCV%2c111%2c%e6%b0%91%e8%91%97%e8%a8%b4%2c10%2c20230117%2c1','17','77e62ef7290347a0ab153393dc3199ac','','','DS','1')" href="data.aspx?ty=JD&amp;id=IPCV%2c111%2c%e6%b0%91%e8%91%97%e8%a8%b4%2c10%2c20230117%2c1&amp;ot=in">智慧財產及商業法院 111 年度 民著訴 字第 10 號民事判決</a>（20K）</td>
+                <td>112.01.17</td>
+                <td width="30%">侵害著作權有關財產權爭議等</td>
+            </tr>
+            <tr class="summary">
+                <th id="jud-s"></th>
+                <td colspan="3" headers="jud-s"><span class="tdCut">上列當事人間請求侵害著作權有關財產權爭議等事件，本院於民國111年12月20日言詞辯論終結，判決如下：主文被告應將設置於高雄市前金區中華三路一二五號診所外騎樓含有附表所示照片之廣告看板移除。原告其餘之訴駁回。訴訟費用由被告負擔二分之一，餘由原告負擔。本判決第一...</span></td>
+            </tr>
+        
+            <tr>
+                <td width="1%" nowrap="nowrap">19.</td>
+                <td><a id="hlTitle" class="hlTitle_scroll" onclick="cookieId('IPCV%2c111%2c%e6%b0%91%e8%91%97%e8%a8%b4%2c14%2c20230113%2c1','18','77e62ef7290347a0ab153393dc3199ac','','','DS','1')" onmousedown="cookieId('IPCV%2c111%2c%e6%b0%91%e8%91%97%e8%a8%b4%2c14%2c20230113%2c1','18','77e62ef7290347a0ab153393dc3199ac','','','DS','1')" href="data.aspx?ty=JD&amp;id=IPCV%2c111%2c%e6%b0%91%e8%91%97%e8%a8%b4%2c14%2c20230113%2c1&amp;ot=in">智慧財產及商業法院 111 年度 民著訴 字第 14 號民事判決</a>（19K）</td>
+                <td>112.01.13</td>
+                <td width="30%">侵害著作權有關財產權爭議</td>
+            </tr>
+            <tr class="summary">
+                <th id="jud-s"></th>
+                <td colspan="3" headers="jud-s"><span class="tdCut">上列當事人間請求侵害著作權有關財產權爭議事件，本院於民國111年12月13日言詞辯論終結，判決如下：主文原告之訴及假執行之聲請均駁回。訴訟費用由原告負擔。事實及理由壹、程序方面：按訴狀送達後，原告不得將原訴變更或追加他訴，但請求之 基礎事實同一者，不在此限，民...</span></td>
+            </tr>
+        
+            <tr>
+                <td width="1%" nowrap="nowrap">20.</td>
+                <td><a id="hlTitle" class="hlTitle_scroll" onclick="cookieId('IPCV%2c112%2c%e6%b0%91%e7%a7%98%e8%81%b2%2c1%2c20230112%2c1','19','77e62ef7290347a0ab153393dc3199ac','','','DS','1')" onmousedown="cookieId('IPCV%2c112%2c%e6%b0%91%e7%a7%98%e8%81%b2%2c1%2c20230112%2c1','19','77e62ef7290347a0ab153393dc3199ac','','','DS','1')" href="data.aspx?ty=JD&amp;id=IPCV%2c112%2c%e6%b0%91%e7%a7%98%e8%81%b2%2c1%2c20230112%2c1&amp;ot=in">智慧財產及商業法院 112 年度 民秘聲 字第 1 號民事裁定</a>（5K）</td>
+                <td>112.01.12</td>
+                <td width="30%">聲請秘密保持命令</td>
+            </tr>
+            <tr class="summary">
+                <th id="jud-s"></th>
+                <td colspan="3" headers="jud-s"><span class="tdCut">上列聲請人因本院111年度民專訴字第51號防止侵害專利權行為事件，聲請發秘密保持命令，本院裁定如下：主文相對人張哲倫律師、羅秀培律師、張秉貹律師、劉君怡專利師、陳建儒專利師就衛生福利部食品藥物管理署111年12月20日FDA藥字第1110031949號函檢附之...</span></td>
+            </tr>
+        </tbody></table>
+        <div class="list-pager">
+        
+<script type="text/javascript">
+    function GoPage(ddl) {
+        location.href = ddl.value;
+    }
+</script>
+<div id="plPager" class="pull-right">
+	
+	<span>共 738 筆 . 現在第 1 / 37 頁</span>
+    <span>
+	    
+        
+        <a id="hlNext" class="page" href="/FJUD/qryresultlst.aspx?q=77e62ef7290347a0ab153393dc3199ac&amp;sort=DS&amp;page=2&amp;ot=in">下一頁</a>
+        <a id="hlLast" class="page" href="/FJUD/qryresultlst.aspx?q=77e62ef7290347a0ab153393dc3199ac&amp;sort=DS&amp;page=37&amp;ot=in">最末頁</a>
+	跳至
+        <select name="ctl00$cp_content$ucPagerButtom$ddlPage" id="ddlPage" class="btn btn-default btn-xs" onchange="GoPage(this)">
+		<option selected="selected" value="/FJUD/qryresultlst.aspx?q=77e62ef7290347a0ab153393dc3199ac&amp;sort=DS&amp;&amp;Page=1">1</option>
+		<option value="/FJUD/qryresultlst.aspx?q=77e62ef7290347a0ab153393dc3199ac&amp;sort=DS&amp;&amp;Page=2">2</option>
+		<option value="/FJUD/qryresultlst.aspx?q=77e62ef7290347a0ab153393dc3199ac&amp;sort=DS&amp;&amp;Page=3">3</option>
+		<option value="/FJUD/qryresultlst.aspx?q=77e62ef7290347a0ab153393dc3199ac&amp;sort=DS&amp;&amp;Page=4">4</option>
+		<option value="/FJUD/qryresultlst.aspx?q=77e62ef7290347a0ab153393dc3199ac&amp;sort=DS&amp;&amp;Page=5">5</option>
+		<option value="/FJUD/qryresultlst.aspx?q=77e62ef7290347a0ab153393dc3199ac&amp;sort=DS&amp;&amp;Page=6">6</option>
+		<option value="/FJUD/qryresultlst.aspx?q=77e62ef7290347a0ab153393dc3199ac&amp;sort=DS&amp;&amp;Page=7">7</option>
+		<option value="/FJUD/qryresultlst.aspx?q=77e62ef7290347a0ab153393dc3199ac&amp;sort=DS&amp;&amp;Page=8">8</option>
+		<option value="/FJUD/qryresultlst.aspx?q=77e62ef7290347a0ab153393dc3199ac&amp;sort=DS&amp;&amp;Page=9">9</option>
+		<option value="/FJUD/qryresultlst.aspx?q=77e62ef7290347a0ab153393dc3199ac&amp;sort=DS&amp;&amp;Page=10">10</option>
+		<option value="/FJUD/qryresultlst.aspx?q=77e62ef7290347a0ab153393dc3199ac&amp;sort=DS&amp;&amp;Page=11">11</option>
+		<option value="/FJUD/qryresultlst.aspx?q=77e62ef7290347a0ab153393dc3199ac&amp;sort=DS&amp;&amp;Page=12">12</option>
+		<option value="/FJUD/qryresultlst.aspx?q=77e62ef7290347a0ab153393dc3199ac&amp;sort=DS&amp;&amp;Page=13">13</option>
+		<option value="/FJUD/qryresultlst.aspx?q=77e62ef7290347a0ab153393dc3199ac&amp;sort=DS&amp;&amp;Page=14">14</option>
+		<option value="/FJUD/qryresultlst.aspx?q=77e62ef7290347a0ab153393dc3199ac&amp;sort=DS&amp;&amp;Page=15">15</option>
+		<option value="/FJUD/qryresultlst.aspx?q=77e62ef7290347a0ab153393dc3199ac&amp;sort=DS&amp;&amp;Page=16">16</option>
+		<option value="/FJUD/qryresultlst.aspx?q=77e62ef7290347a0ab153393dc3199ac&amp;sort=DS&amp;&amp;Page=17">17</option>
+		<option value="/FJUD/qryresultlst.aspx?q=77e62ef7290347a0ab153393dc3199ac&amp;sort=DS&amp;&amp;Page=18">18</option>
+		<option value="/FJUD/qryresultlst.aspx?q=77e62ef7290347a0ab153393dc3199ac&amp;sort=DS&amp;&amp;Page=19">19</option>
+		<option value="/FJUD/qryresultlst.aspx?q=77e62ef7290347a0ab153393dc3199ac&amp;sort=DS&amp;&amp;Page=20">20</option>
+		<option value="/FJUD/qryresultlst.aspx?q=77e62ef7290347a0ab153393dc3199ac&amp;sort=DS&amp;&amp;Page=21">21</option>
+		<option value="/FJUD/qryresultlst.aspx?q=77e62ef7290347a0ab153393dc3199ac&amp;sort=DS&amp;&amp;Page=22">22</option>
+		<option value="/FJUD/qryresultlst.aspx?q=77e62ef7290347a0ab153393dc3199ac&amp;sort=DS&amp;&amp;Page=23">23</option>
+		<option value="/FJUD/qryresultlst.aspx?q=77e62ef7290347a0ab153393dc3199ac&amp;sort=DS&amp;&amp;Page=24">24</option>
+		<option value="/FJUD/qryresultlst.aspx?q=77e62ef7290347a0ab153393dc3199ac&amp;sort=DS&amp;&amp;Page=25">25</option>
+
+	</select>
+頁
+    </span>
+
+</div>
+<div class="clearfix"></div>
+        </div>
+    </div>
+
+    </div>
+    </form>
+
+
+<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/js/iframeautohight.js"></script>
+<script type="text/javascript" src="/js/functions.js"></script>
+<script>
+    $(".hlTitle_scroll").click(function () {
+        var expires = new Date();
+        //有效時間保存 3分鐘 3*60*1000
+        expires.setTime(expires.getTime() + 180000);
+        var scroll = parent.document.documentElement.scrollTop;
+        document.cookie = "yPos=!~" + scroll + "~!" + ";expires=" + expires.toGMTString() + ";path=/";
+    });
+
+    $(function () {
+        if (!!window.performance && window.performance.navigation.type === 2) {
+            //!! 用來檢查 window.performance 是否存在
+            //window.performance.navigation.type ===2 表示使用 back or forward
+            var strCook = document.cookie;
+            if (strCook.indexOf("!~") != 0) {
+                var intS = strCook.indexOf("!~");
+                var intE = strCook.indexOf("~!");
+                var strPos = strCook.substring(intS + 2, intE);
+                top.$("body,html").animate({ scrollTop: strPos }, 0);
+                document.cookie = "";
+            }
+        }
+        else
+        {
+            //iframe換頁後，必須至頂
+            if (parent.document.documentElement.scrollTop != 0) { top.$("body,html").animate({ scrollTop: 0 }, 0); }
+        }
+        //避免XFS攻擊
+        if (top.location.hostname != self.location.hostname) { top.location = self.location; }
+        //如果法規放在iframe裡，那Master要改用iframe.master
+        if ($("#iframe-data", window.parent.document) != undefined) {
+            var queryVars = { 'ot': 'in' };
+         
+            $("a:not(.eng)").each(function (index) {
+                var url = $(this).attr("href");
+                var target = $(this).attr("target");
+                /*
+                if (url.indexOf("https://cons-test.judicial.gov.tw/") >= 0)
+                {
+                    return;
+                }
+                */
+                try {
+                    if (url != undefined && url.substring(0, 1) != "#" && target != "_blank" && target != "_parent") {
+                        if (url.indexOf('ot=in') == -1) {
+                            var separator = url.indexOf('?') !== -1 ? "&" : "?";
+                            url = url + separator + "ot=in";
+                            $(this).attr("href", url);
+                        }
+                    }
+                } catch (err) {
+                    alert(err.message);
+                }
+            });
+        }
+    });
+</script>
+
+    <script>
+        var ShortMemo = "1";
+        //排序
+        //var ty = getUrlParameter("ty");
+        var gy = getUrlParameter("gy");
+        var gc = getUrlParameter("gc");
+        //var qUrl = "&ty=" + ty + "&gy=" + gy + "&gc=" + gc + "&q=77e62ef7290347a0ab153393dc3199ac";
+        var qUrl = "&gy=" + gy + "&gc=" + gc + "&q=77e62ef7290347a0ab153393dc3199ac";
+
+        $(".dropdown-menu a").on("click", function (e) {
+            e.preventDefault();
+            window.location.href = $(this).attr("href") + qUrl;
+        });
+
+        $(function () {
+            if (document.cookie.indexOf("showcut=1") > -1) {
+                $(".tdCut").hide();
+                ShortMemo = "0";
+                $("#closeCut").text("顯示摘要");
+            }
+            else {
+                $(".tdCut").show();
+                ShortMemo = "1";
+                $("#closeCut").text("隱藏摘要");
+                document.cookie = "showcut=; expires=Thu, 01 Jan 1970 00:00:00 GMT" + ";path=/";
+            }
+        });
+
+        $("#closeCut").click(function () {
+            if (ShortMemo == "1") {
+                var d = new Date();
+                d.setTime(d.getTime() + (1 * 24 * 60 * 60 * 1000));//保存1個月
+                var expires = "expires=" + d.toGMTString();
+                //加入cookie
+                document.cookie = "showcut=1; expires=" + expires + ";path=/";
+                $(".tdCut").hide();
+                ShortMemo = "0";
+                $("#closeCut").text("顯示摘要");
+            }
+            else {
+                $(".tdCut").show();
+                ShortMemo = "1";
+                $("#closeCut").text("隱藏摘要");
+                document.cookie = "showcut=; expires=Thu, 01 Jan 1970 00:00:00 GMT" + ";path=/";
+            }
+        });
+    </script>
+</body></html>
