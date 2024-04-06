@@ -1,11 +1,6 @@
-# from selenium import webdriver
-# from selenium.webdriver.common.by import By
-# from selenium.webdriver.chrome.service import Service
 from bs4 import BeautifulSoup
 import requests
-import sys
-
-print(sys.getdefaultencoding())
+import csv
 
 DEFAULT_URL = "https://judgment.judicial.gov.tw/FJUD/qryresultlst.aspx"
 SEARCH_QUERY = "q=f28fe0e5ff76c77846a142cb764c2f50"
@@ -26,8 +21,8 @@ def writeCsv(filename, dataList):
     file.close()
 
 # 回傳第一面搜尋結果
-response = requests.get(DEFAULT_URL + "?ty=JUDBOOK&" + SEARCH_QUERY)
-extractHTML(response)
+# response = requests.get(DEFAULT_URL + "?ty=JUDBOOK&" + SEARCH_QUERY)
+# extractHTML(response)
 
 # 回傳第 2 ~ 25 面搜尋結果，與第一面 API 不同
 # Todo: 自動抓取搜尋最大頁數，目前設定超出上限頁數不會跳出預期外行為
@@ -36,3 +31,21 @@ for page in range(2,25):
     print(f"page: {page}")
     res = requests.get(DEFAULT_URL + "?" + SEARCH_QUERY +"&sort=DS&page="+ str(page) +"&ot=in")
     extractHTML(res)
+
+# 使用 data.csv 的資料取得判決書的詳細內容
+BASE_URL = "https://judgment.judicial.gov.tw/FJUD/"
+
+with open('data.csv', newline='') as file:
+    reader = csv.reader(file, delimiter=' ')
+    contents = list(reader)
+    for url in contents:
+        url = ', '.join(url)
+        res = requests.get(BASE_URL + url)
+        data = BeautifulSoup(res.text, "html.parser").find("div", {"id": "jud"})
+        print(data)
+
+        # 將取得的判決書資訊另存於新文件中
+        with open('contents', "a", encoding="utf8",) as newfile:
+            newfile.write(str(data))
+        newfile.close()
+file.close()
