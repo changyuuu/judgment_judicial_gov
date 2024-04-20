@@ -1,9 +1,8 @@
-from bs4 import BeautifulSoup
-import requests
+from package import *
 import csv
-import time
 
 DEFAULT_URL = "https://judgment.judicial.gov.tw/FJUD/qryresultlst.aspx"
+
 SEARCH_QUERY = [
     "q=b3275316dca5b005627eed79e843eec6",  # 93~98  353
     "q=87518f061a97aac27da2dc392c642642",  # 99
@@ -22,73 +21,46 @@ SEARCH_QUERY = [
     "q=6172945538432ce7fa1db2a2f70510a6"   # 112
     ]
 
-session = requests.Session()
-
-# 擷取搜尋結果並寫入 CSV
-def extract_and_save(res, filename):
-    soup = BeautifulSoup(res.text, "html.parser")
-    contents = soup.find_all("a", {"class": "hlTitle_scroll"})
-
-    with open(filename, "a", encoding='utf-8') as file:
-        for data in contents:
-            file.write(data['href'] + '\n')
-            print(data['href'])
-    file.close()
-    time.sleep(1)
-
 session = requests.Session()  # 使用 session 來保持連線狀態
 
+'''
 #  Done: 暫時註解
-# for search_query in SEARCH_QUERY:
-#     print(f"Processing {SEARCH_QUERY.index(search_query)}")
-#     try:
-#         response = session.get(f"{DEFAULT_URL}?ty=JUDBOOK&{search_query}")
-#         extract_and_save(response, "data.csv")
+for search_query in SEARCH_QUERY:
+    print(f"Processing {SEARCH_QUERY.index(search_query)}")
+    try:
+        response = session.get(f"{DEFAULT_URL}?ty=JUDBOOK&{search_query}")
+        extract_and_save(response, "data.csv")
 
-#         for page in range(2, 25):
-#             print(f"page: {page}")
-#             res = session.get(f"{DEFAULT_URL}?{search_query}&sort=DS&page={page}&ot=in")
-#             extract_and_save(res, "data.csv")
-#     except Exception as e:
-#         print(f"An error occurred: {e}")
-
+        for page in range(2, 25):
+            print(f"page: {page}")
+            res = session.get(f"{DEFAULT_URL}?{search_query}&sort=DS&page={page}&ot=in")
+            extract_and_save(res, "data.csv")
+    except Exception as e:
+        print(f"An error occurred: {e}")
+'''
 
 # 使用 data.csv 的 api 取得判決書內容
 BASE_URL = "https://judgment.judicial.gov.tw/FJUD/"
 
+# Ongoing: 不同長度的 url 有對應不同的 html 格式，需分開處理
 # 初始版本：待修
-# with open('data.csv', newline='') as file:
-#     reader = csv.reader(file, delimiter=' ')
-#     contents = list(reader)
-#     for url in contents:
-#         url = ', '.join(url)
-#         res = requests.get("https://judgment.judicial.gov.tw/FJUD/data.aspx?ty=JD&id=SCDV%2c110%2c%e6%99%ba%2c2%2c20230130%2c3&ot=in")
-#         # data = BeautifulSoup(res.text, "html.parser").find("divx", {"id": "jud"})
-#         data = BeautifulSoup(res.text, "html.parser").find("div", {"class": "col-td"})
-#         print(data)
 
-#         # 將取得的判決書資訊另存於新文件中
-#         with open('content_test.csv', "a", encoding="utf8",) as newfile:
-#             newfile.write(str(data))
-#         newfile.close()
-# file.close()
+with open('data.csv', newline='') as file:
+    reader = csv.reader(file, delimiter=' ')
+    contents = list(reader)
+
+    for url in contents:
+        url = ', '.join(url)
+        print(getDetailInfo(BASE_URL, url))
+
+        # 將取得的判決書資訊另存於新文件中
+        # with open('contents.csv', "a", encoding="utf8",) as newfile:
+        #     newfile.write(str(data))
+        # newfile.close()
+
+file.close()
 
 
-# Todo: 不同長度的 url 有對應不同的 html 格式，需分開處理
-# Way_1 reference to: https://judgment.judicial.gov.tw/FJUD/data.aspx?ty=JD&id=SCDV%2c110%2c%e6%99%ba%2c2%2c20230130%2c3&ot=in
-def getDetailInfo_Way_one(request, url):
-    res = request.get(BASE_URL + url)
-    soup = BeautifulSoup(res.text, "html.parser").find("div", {"id": "jud"})
-    
-    rows = soup.find_all("div", {"class": "row"})[:3]
-    for item in rows:
-        col_td = item.find("div", {"class":"col-td"}).get_text(strip=True)   # Get 判決號、時間、刑由
-        print(col_td)
-
-    contents = soup.find_all('div', {"class": "htmlcontent"})
-    if contents:
-        content = contents[0].find_all("div", {"id":"pasted_paragraph_1675076260875M_6282742"})  # Get 原告
-        [print(item.get_text(strip=True)) for item in content]
-
-        content_2 = contents[0].find_all("div", {"id":"pasted_paragraph_1675076260875b_3700518"}) # Get 被告
-        [print(item.get_text(strip=True)) for item in content_2]      
+# Testing
+# getDetailInfo(BASE_URL, "data.aspx?ty=JD&id=IPCV%2c98%2c%e6%b0%91%e5%b0%88%e4%b8%8a%e6%9b%b4(%e4%b8%80)%2c6%2c20091231%2c2&ot=in")
+print(getDetailInfo(BASE_URL, "data.aspx?ty=JD&id=IPCV%2c98%2c%e6%b0%91%e5%b0%88%e4%b8%8a%e6%9b%b4(%e4%b8%80)%2c6%2c20091231%2c2&ot=in"))
