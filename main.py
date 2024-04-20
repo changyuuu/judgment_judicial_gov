@@ -24,7 +24,7 @@ SEARCH_QUERY = [
 
 session = requests.Session()
 
-# 擷取 HTML 元素並寫入 CSV
+# 擷取搜尋結果並寫入 CSV
 def extract_and_save(res, filename):
     soup = BeautifulSoup(res.text, "html.parser")
     contents = soup.find_all("a", {"class": "hlTitle_scroll"})
@@ -37,6 +37,8 @@ def extract_and_save(res, filename):
     time.sleep(1)
 
 session = requests.Session()  # 使用 session 來保持連線狀態
+
+#  Done: 暫時註解
 # for search_query in SEARCH_QUERY:
 #     print(f"Processing {SEARCH_QUERY.index(search_query)}")
 #     try:
@@ -51,7 +53,7 @@ session = requests.Session()  # 使用 session 來保持連線狀態
 #         print(f"An error occurred: {e}")
 
 
-# 使用 data.csv 的資料取得判決書的詳細內容
+# 使用 data.csv 的 api 取得判決書內容
 BASE_URL = "https://judgment.judicial.gov.tw/FJUD/"
 
 # 初始版本：待修
@@ -73,6 +75,7 @@ BASE_URL = "https://judgment.judicial.gov.tw/FJUD/"
 
 
 # Todo: 不同長度的 url 有對應不同的 html 格式，需分開處理
+# Way_1 reference to: https://judgment.judicial.gov.tw/FJUD/data.aspx?ty=JD&id=SCDV%2c110%2c%e6%99%ba%2c2%2c20230130%2c3&ot=in
 def getDetailInfo_Way_one(request, url):
     res = request.get(BASE_URL + url)
     soup = BeautifulSoup(res.text, "html.parser").find("div", {"id": "jud"})
@@ -80,12 +83,12 @@ def getDetailInfo_Way_one(request, url):
     rows = soup.find_all("div", {"class": "row"})[:3]
     for item in rows:
         col_td = item.find("div", {"class":"col-td"}).get_text(strip=True)   # Get 判決號、時間、刑由
-        print(item)
+        print(col_td)
 
     contents = soup.find_all('div', {"class": "htmlcontent"})
     if contents:
-        content = fourth_row[0].find_all("div", {"id":"pasted_paragraph_1675076260875M_6282742"})  # Get 原告
+        content = contents[0].find_all("div", {"id":"pasted_paragraph_1675076260875M_6282742"})  # Get 原告
         [print(item.get_text(strip=True)) for item in content]
 
-        content_2 = fourth_row[0].find_all("div", {"id":"pasted_paragraph_1675076260875b_3700518"}) # Get 被告
+        content_2 = contents[0].find_all("div", {"id":"pasted_paragraph_1675076260875b_3700518"}) # Get 被告
         [print(item.get_text(strip=True)) for item in content_2]      
