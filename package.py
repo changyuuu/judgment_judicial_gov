@@ -30,7 +30,6 @@ def getDetailInfo(BASE_URL, url):
     for item in rows:
         col_td = item.find("div", {"class":"col-td"}).get_text(strip=True)   # Get 判決號、時間、刑由
         data_list_1.append(col_td)
-        # print(col_td)
     
     contents = soup.find_all('div', {"class": "jud_content"})
     if contents:
@@ -38,12 +37,13 @@ def getDetailInfo(BASE_URL, url):
         # [print(item.get_text(strip=True)) for item in content]
         data_list_2.extend([item.get_text(strip=True) for item in content])
 
-    # new_list = data_list.copy()[:5]
     data_list_ = clean_text(data_list_2.copy())[:5]
+    # data_list_ = data_list_2.copy()[:5]
 
-    new_list = [word for item in data_list_ for word in item.split()][:30]
+    new_list = [word for item in data_list_ for word in item.split()][:20]
 
     return data_list_1, new_list
+    # return data_list_1, data_list_2
 
 def clean_text(text_list):
     cleaned_list = []

@@ -4,27 +4,31 @@ import csv
 DEFAULT_URL = "https://judgment.judicial.gov.tw/FJUD/qryresultlst.aspx"
 
 SEARCH_QUERY = [
-    "q=b3275316dca5b005627eed79e843eec6",  # 93~98  353
-    "q=87518f061a97aac27da2dc392c642642",  # 99
-    "q=7e2c7630c8c840f90a41a7d0c59e7d89",  # 100
-    "q=f44a6a3093f54d27858ae55ac61ff907",  # 101
-    "q=ea5ca033767b978d9088dc49bd3d163e",  # 102
-    "q=f9e6f3b0ebd58ae96a5a6a322843aaf6",  # 103
-    "q=d2c284580056636eb4917cc80322e495",  # 104
-    "q=a8c879657d1fae55eb29e814928f0007",  # 105
-    "q=804be600284fcc9a37624437ef104d91",  # 106
-    "q=c806bcab3f8eceb6222b83a6ab020440",  # 107
-    "q=867b427fd3e40ab57cfda140ff0bf69a",  # 108
-    "q=334a3c6e5da349064693b2441e2bd623",  # 109
-    "q=85d81e5c2caaa2c2fc3389db2680d813",  # 110
-    "q=68aa6e067d0473af418492fd7e1134e7",  # 111
-    "q=6172945538432ce7fa1db2a2f70510a6"   # 112
+    "q=561da78895d41383d5d3e773bd90a239",  # 93, 44
+    "q=5cb216948f013c3704e44f02c0dc8a2c",  # 94, 88
+    "q=05bb553ff905299ab7d072e46f88d739",  # 95, 102
+    "q=eb6e869d936ba559be62b6ffd439861c",  # 96, 109
+    "q=cbd2cb29d468b9cdde99e9dad9759414",  # 97, 257
+    "q=925488997d315aa4cf4aa6181925d3b5",  # 98, 319
+    "q=2b8937c8a94b15cf260b6c0c0130b24a",  # 99, 325
+    "q=074a96ffd8bfbd306623bf9ac1c9cf0a",  # 100, 451
+    "q=72fdc29fa218860b2d9c671a9f4d3c48",  # 101, 359
+    "q=1634381fe050990f9fb2e2b9ab479b84",  # 102, 413
+    "q=38b7e39655c452b1f5e62a4682e2e4fe",  # 103, 332
+    "q=cf9794e4f8c976604a52d1dbea1adb10",  # 104, 300
+    "q=cc25374bfa7a3438b49b37eeecf0d511",  # 105, 271
+    "q=44f8f47e7b7435d38f02923935f34841",  # 106, 245
+    "q=25c71da148182f965f4cae72cd3cfd97",  # 107, 331
+    "q=d654819a406810cfdabc59f731efdc16",  # 108, 289
+    "q=035d244fa67cb9fc824690a7dc6a9739",  # 109, 387
+    "q=6693664abf0fbbb4785d2c0c9957dfd8",  # 110, 300
+    "q=9fd03c0bb74c55bf937989155396f1da",  # 111, 195
+    "q=85ab7c57abde8a5e805f2d2012d09aa8"   # 112, 231
     ]
 
 session = requests.Session()  # 使用 session 來保持連線狀態
 
-'''
-#  Done: 暫時註解
+'''#  Done: 暫時註解
 for search_query in SEARCH_QUERY:
     print(f"Processing {SEARCH_QUERY.index(search_query)}")
     try:
@@ -36,15 +40,12 @@ for search_query in SEARCH_QUERY:
             res = session.get(f"{DEFAULT_URL}?{search_query}&sort=DS&page={page}&ot=in")
             extract_and_save(res, "data.csv")
     except Exception as e:
-        print(f"An error occurred: {e}")
-'''
+        print(f"An error occurred: {e}")'''
 
 # 使用 data.csv 的 api 取得判決書內容
 BASE_URL = "https://judgment.judicial.gov.tw/FJUD/"
 
-# Ongoing: 不同長度的 url 有對應不同的 html 格式，需分開處理
 # 初始版本：待修
-
 with open('data.csv', newline='') as file:
     reader = csv.reader(file, delimiter=' ')
     contents = list(reader)
@@ -59,8 +60,3 @@ with open('data.csv', newline='') as file:
         # newfile.close()
 
 file.close()
-
-
-# Testing
-# getDetailInfo(BASE_URL, "data.aspx?ty=JD&id=IPCV%2c98%2c%e6%b0%91%e5%b0%88%e4%b8%8a%e6%9b%b4(%e4%b8%80)%2c6%2c20091231%2c2&ot=in")
-print(getDetailInfo(BASE_URL, "data.aspx?ty=JD&id=IPCV%2c98%2c%e6%b0%91%e5%b0%88%e4%b8%8a%e6%9b%b4(%e4%b8%80)%2c6%2c20091231%2c2&ot=in"))
